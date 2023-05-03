@@ -1,0 +1,39 @@
+{%extends "base.html"%}
+{%block title%}History{% endblock %}
+
+{%block content%}
+<h1>History</h1>
+<div id = "workouts" class="four_grid">
+  {% for workout in user.workouts%}
+    <li class = "list-group-item"style="background-color: #9c9c80; margin-top: 20px;
+    font-size: 20px; text-align: center; width: 430px; border: 2px solid #333D29;">
+      {{workout.type}} on {{workout.date.strftime("%B")}} {{workout.date.strftime("%d")}}, {{workout.date.strftime("%Y")}}. 
+      <button type="button" style="background-color: #9c9c80; color: #333D29; border: 2px solid #333D29;" 
+      onclick="document.getElementById({{workout.id}}).style.display='block'" 
+      style="width:auto;">more details</button>
+      <button type="button" class="close" onclick="deleteWorkout({{workout.id}})">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </li>
+
+    <div class = "modal" id = {{workout.id}}>
+      <div class = "modal-content">
+        <button type="button" style="background-color: #583636;
+        color: #f1f1c6; width: 30px" onclick="document.getElementById({{workout.id}}).style.display='none'">
+        X</button>
+        <div align="center">
+          <p>Workout Date: {{workout.date.strftime("%B")}} {{workout.date.strftime("%d")}}, {{workout.date.strftime("%Y")}}</p>
+          <p>Workout Type: {{workout.type}}</p>
+          <p>Distance Went: {{workout.distance}} miles</p>
+          <p>Time Lapsed: {{workout.time}} minutes</p>
+          <p>Speed: {{workout.distance*60/workout.time}} mph</p>
+          <p>Workout Notes: {{workout.notes}}</p>
+          <button type="button" 
+          onClick="location.href = '/edit/{{workout.id}}'">Edit Information</button>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

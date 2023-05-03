@@ -1,0 +1,234 @@
+body {
+  background-color: white;
+}
+
+h1 {
+  font-size: 35px;
+  color: #333D29;
+  font-family: 'Barlow';
+  text-align: center;
+}
+
+h2 {
+  font-size: 30px;
+  color: #83896c;
+  font-family: 'Barlow';
+}
+
+h3 {
+  color: #582F0E;
+  font-family: 'Barlow';
+}
+
+p {
+  color: rgb(47, 1, 1);
+  font-family: 'Barlow';
+}
+
+body {
+  margin-left: 15px;
+  margin-right: 15px;
+  font-family: 'Barlow';
+}
+
+/*Nav Bar Settings*/
+
+div.top_menu {
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 50px;
+  display: block;
+  display: grid;
+  grid-template-columns: auto 80px 80px 80px 80px;
+}
+
+.test {
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.dropbtn {
+  margin-top: 4px;
+  background-color: white;
+  font-family: 'Barlow';
+  color: rgb(47, 1, 1);
+  font-size: 20px;
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover {
+  background-color: #83896c;
+}
+
+.dropdown {
+  float: right;
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  font-size: 20px;
+  font-family: 'Barlow';
+  background-color: #83896c;
+  min-width: 160px;
+  overflow: auto;
+  right: 0;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: rgb(47, 1, 1);
+  font-family: 'Barlow';
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #4f5240;
+}
+
+.show {
+  display: block;
+}
+
+/*Grid Layouts*/
+
+.two_grid {
+  text-align: left;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-evenly;
+  grid-column-gap: 10px;
+}
+
+.four_grid{
+  text-align: left;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-evenly;
+  grid-column-gap: 10px;
+}
+/*Grid for Index Page*/
+.item1 {
+  grid-area: a;
+}
+
+.item2 {
+  grid-area: b;
+}
+
+.item3 {
+  grid-area: c;
+}
+
+.item4 {
+  grid-area: d;
+}
+
+.index_grid {
+  text-align: left;
+  display: grid;
+  grid-template-areas:
+    'a b b'
+    'c c d';
+  justify-content: space-evenly;
+  grid-column-gap: 10px;
+}
+
+.food_search input[type=text] {
+  float: center;
+  padding: 6px;
+  border: none;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-family: 'Barlow';
+  background-color: #4f5240;
+}
+
+.card {
+  width: 500px;
+  height: 50px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  text-align: center;
+}
+
+/*Login Formats*/
+.container {
+  grid-template-columns: auto;
+  font-family: 'Barlow';
+  font-size: 20px;
+}
+
+input[type=text],
+input[type=password] {
+  width: 40%;
+  padding: 6px 20px;
+  font-family: 'Barlow';
+  font-size: 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #4f5240;
+  background-color: #83896c;
+  box-sizing: border-box;
+}
+
+button[type=submit] {
+  background-color: #4f5240;
+  font-family: 'Barlow';
+  font-size: 20px;
+  cursor: pointer;
+}
+
+button[type=create] {
+  background-color: #83896c;
+  font-family: 'Barlow';
+  font-size: 20px;
+  margin-top: 40px;
+  border: none;
+  cursor: pointer;
+}
+
+button[type=button] {
+  font-family: 'Barlow';
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/*Styling for the popup in fitness*/
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 40%; /* Could be more or less, depending on screen size */
+}

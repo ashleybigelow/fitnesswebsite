@@ -1,0 +1,42 @@
+{%extends "base.html"%}
+{%block title%}Fitness{% endblock %}
+
+{%block content%}
+<div class = "modal" id = "edit-information" style = "display: block">
+  <div class = "modal-content">
+    <button type="button" style="background-color: #583636;
+    color: #f1f1c6; width: 30px" onclick="location.href = '/history'">
+    X</button>
+    <div align="center">
+      <form method="POST">
+        <div>
+          <label for="type"><b>Workout Type</b></label>
+          <input type="text" placeholder="ex.Run" name="type" style = "background-color: #fefefe; width: 100px; height: 30px;">
+        </div>
+        <div>
+          <label for="date"><b>Date</b></label>
+          <input type="text" placeholder="mm/dd/yyyy" name="date" style = "background-color: #fefefe; width: 167px; height: 30px">
+        </div>
+        <div>
+          <label for="time"><b>Time</b></label>
+          <input type="text" placeholder="Minutes" name="time" style = "background-color: #fefefe; width: 164px; height: 30px;">
+        </div>
+        <div>
+          <label for="distance"><b>Distance Went</b></label>
+          <input type="text" placeholder="Miles" name="distance" style = "background-color: #fefefe; width: 100px; height: 30px;">
+        </div>
+        <div>
+          <label for="notes"><b>Notes</b></label>
+          <textarea name="notes" id="notes" class="form-control" style = "width: 200px; margin-bottom: 20px;"></textarea>
+        </div>
+          <!--On click this will have to check the database-->
+        <div>
+          <button type="submit">Submit Changes</button>
+          <button type="button" onclick="location.href='/history'">Back</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

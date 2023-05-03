@@ -1,0 +1,40 @@
+{%extends "base.html"%}
+{%block title%}Settings{% endblock %}
+
+{%block content%}
+<h1>Settings</h1>
+<div align="center">
+  <h2>Account Email: {{user.email}}</h2>
+  <h2>Account Username: {{user.username}}</h2>
+  <button style="outline: black solid 2px; border: none; margin-top: 30px;
+  background-color: white;" 
+  onclick="document.getElementById({{user.id}}).style.display='block'">
+  Change Password</button>
+  <button style="outline: red solid 2px; border: none; margin-top: 30px;
+  background-color: white;" onclick="deleteAccount()">Delete Account</button>
+</div>
+
+<div class = "modal" id = {{user.id}}>
+  <div class = "modal-content">
+    <form method="POST">
+      <button type="button" style="background-color: #583636;
+        color: #f1f1c6; width: 30px" onclick="document.getElementById({{user.id}}).style.display='none'">
+        X</button>
+      <div  align="center">
+        <div>
+          <label for="password"><b>Current Password</b></label>
+          <input type="password" placeholder="Enter Current Password" name="password" 
+          style="background-color: white;"required>
+        </div>
+        <div>
+          <label for="new_password"><b>New Password</b></label>
+          <input type="text" placeholder="Enter New Password" name="new_password" 
+          style="background-color: white;"required>
+        </div>
+        <button type="submit" style="background-color:white; 
+        margin-bottom: 50px; margin-top: 50px;">Update Account</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

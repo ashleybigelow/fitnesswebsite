@@ -1,0 +1,29 @@
+{%extends "base.html"%}
+{%block title%}Login{% endblock %}
+
+{%block content%}
+<h1 style = "margin-bottom: 40px;">Enter Your Username and Password</h1>
+    <div class = "center">
+      <div class="container">
+        <form method="POST">
+          <div>
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+          </div>
+          <div>
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+          </div>
+            <!--On click this will have to check the database-->
+          <div>
+            <button type="submit">Login</button>
+          </div>
+        </form>
+      </div>
+      <button type = "create"
+      onclick="location.href = '/sign-up';"
+      style="width:auto;">
+      Create an Account
+      </button>
+    </div>
+{% endblock %}

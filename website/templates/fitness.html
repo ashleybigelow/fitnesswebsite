@@ -1,0 +1,83 @@
+{%extends "base.html"%}
+{%block title%}Fitness{% endblock %}
+
+{%block content%}
+<h1 style = "margin-bottom: 50px;">Fitness</h1>
+
+{% if user.is_authenticated %}
+<div class="two_grid">
+
+  <!--This is the form for a Cardio Workout-->
+<div align = 'center'>
+<H2 style="margin-bottom: 20px">Cardio Workout</H2>
+  <form method = "POST" style = "background-color: #333D29; width: 400px; 
+  height: 450px">
+    <div class = center>
+      <div>
+        <label for="type" style = "color: white; margin-top: 30px;"><b>Type</b></label>
+        <input type="text" name="type" placeholder = "ex.Run" 
+        style="background-color: white; width: 100px;" required>
+      </div>
+      <div>
+        <label for="distance" style = "color: white"><b>Distance</b></label>
+        <input type="text" name="distance" placeholder = "miles" 
+        style="background-color: white; width: 100px;" required>
+      </div>
+      <div>
+        <label for="time" style = "color: white"><b>Time</b></label>
+        <input type="text" name="time" placeholder = "minutes" 
+        style="background-color: white; width: 100px" required>
+      </div>
+      <div>
+        <label for="date" style = "color: white"><b>Date</b></label>
+        <input type="text" name="date" placeholder = "mm/dd/yyyy" 
+        style="background-color: white; width: 150px">
+      </div>
+      <div>
+        <label for="notes" style = "color: white"><b>Notes</b></label>
+        <textarea name="notes" id="notes" class="form-control" 
+        style = "width: 200px;"></textarea>
+        <button type="submit" class="btn" style="background-color: #333D29; 
+        color: white; outline: white solid; margin-top: 20px;">Log Workout</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!--This is the form for a Strength workout-->
+<div align = 'center'>
+  <H2 style="margin-bottom: 20px;">Strength Workout</H2>
+  <form method = "POST" style = "background-color: #333D29; width: 400px; 
+  height: 450px; position: relative;">
+    <div class = center>
+      <div>
+        <label for="type" style = "color: white; margin-top: 50px"><b>Type</b></label>
+        <input type="text" name="type" placeholder = "ex.Run" 
+        style="background-color: white; width: 100px;" required>
+      </div>
+      <div>
+        <label for="time" style = "color: white"><b>Time</b></label>
+        <input type="text" name="time" placeholder = "minutes" 
+        style="background-color: white; width: 100px" required>
+      </div>
+      <div>
+        <label for="date" style = "color: white"><b>Date</b></label>
+        <input type="text" name="date" placeholder = "mm/dd/yyyy" 
+        style="background-color: white; width: 150px">
+      </div>
+      <div>
+        <label for="notes" style = "color: white"><b>Notes</b></label>
+        <textarea name="notes" id="notes" class="form-control" 
+        style = "width: 200px;"></textarea>
+        <button type="submit" class="btn" style="background-color: #333D29; 
+        color: white; outline: white solid; margin-top: 40px;">Log Workout</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+</div>
+{% else %}
+<h2 align="center">Create An Account to Log Your Fitness!</h2>
+{% endif %}
+{% endblock %}
